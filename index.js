@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 const PAGE_URL = 'https://splinterlands.com'; 
-const usernamez = 'mapablevent@gmail.com';
+const usernamez = 'acebatibot1@gmail.com';
 const passwordz = '@Synesthesia14';
 var monster = "";
 'use strict';
@@ -80,6 +80,7 @@ function delay(time) {
 				await page.goto('https://splinterlands.com/?p=card_details&id=228&gold=false&edition=3&tab=cards');
 				await page.waitForSelector('#active_skin', { timeout: 20000 })
     			const text1 = await page.$eval('html', element => element.textContent)
+				//console.log(text1);
     			if(text1.indexOf("C3-") !== -1)
 				{
 					console.log("monster already rented");
@@ -92,17 +93,15 @@ function delay(time) {
 					await page.select('#market_sort', 'price');
 					await page.waitForTimeout(2500);
 					console.log('sort done');
-					await page.mouse.click(417, 372, {button: 'left'})
+					await page.waitForSelector('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
+					await page.click('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
 					await page.waitForTimeout(2000);
 					console.log('ticking checkbox done');
-					await page.mouse.click(1145, 265, {button: 'left'})
+					await page.click('#btn_buy');
 					await page.waitForTimeout(2000);
-					await page.mouse.click(713, 310, {button: 'left'})
-					await page.mouse.click(713, 310, {button: 'left'})
-					await page.mouse.click(713, 310, {button: 'left'})
-					await page.mouse.click(713, 310, {button: 'left'})
-					await page.mouse.click(713, 310, {button: 'left'})
-					await page.mouse.click(713, 310, {button: 'left'})
+					await page.$eval('input[type=number]', el => el.value = '1');
+					console.log('changed rent days to value of 1')
+
 					page.on('dialog', async dialog => 
 					{
 						console.log("dialog is up:");
@@ -113,7 +112,6 @@ function delay(time) {
 					await page.click('#btn_rent_popup_rent');
 					await page.waitForSelector('#active_skin', { timeout: 20000 })
     				await page.goto('https://splinterlands.com/?p=card_details&id=228&gold=false&edition=3&tab=cards');
-					console.log(text1);
 					if(text1.indexOf('C3-') !== -1)
 					{
 						console.log("monster already rented ");
@@ -140,16 +138,12 @@ await page.goto('https://splinterlands.com/?p=card_details&id=12&gold=true&editi
 await page.waitForSelector('.price-bcx', { timeout: 20000 })
 await page.select('#market_sort', 'price');
 	await page.waitForTimeout(2000);
-await page.mouse.click(417, 372, {button: 'left'})
+					await page.waitForSelector('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
+					await page.click('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
 await page.waitForTimeout(2000);
-await page.mouse.click(1145, 265, {button: 'left'})
+await page.click('#btn_buy');
 await page.waitForTimeout(2000);
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
+await page.$eval('input[type=number]', el => el.value = '1');
 page.on('dialog', async dialog => {
 await dialog.accept();
 });
@@ -179,16 +173,12 @@ await page.goto('https://splinterlands.com/?p=card_details&id=14&gold=true&editi
 await page.waitForSelector('.price-bcx', { timeout: 20000 })
 await page.select('#market_sort', 'price');
 	await page.waitForTimeout(2000);
-await page.mouse.click(417, 372, {button: 'left'})
+					await page.waitForSelector('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
+					await page.click('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
 await page.waitForTimeout(2000);
-await page.mouse.click(1145, 265, {button: 'left'})
+await page.click('#btn_buy');
 await page.waitForTimeout(2000);
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
+await page.$eval('input[type=number]', el => el.value = '1');
 page.on('dialog', async dialog => {
 await dialog.accept();
 });
@@ -219,16 +209,12 @@ await page.goto('https://splinterlands.com/?p=card_details&id=103&gold=true&edit
 await page.waitForSelector('.price-bcx', { timeout: 20000 })
 await page.select('#market_sort', 'price');
 	await page.waitForTimeout(2000);
-await page.mouse.click(417, 372, {button: 'left'})
+					await page.waitForSelector('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
+					await page.click('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
 await page.waitForTimeout(2000);
-await page.mouse.click(1145, 265, {button: 'left'})
+await page.click('#btn_buy');
 await page.waitForTimeout(2000);
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
+await page.$eval('input[type=number]', el => el.value = '1');
 page.on('dialog', async dialog => {
 await dialog.accept();
 });
@@ -259,16 +245,12 @@ await page.goto('https://splinterlands.com/?p=card_details&id=264&gold=false&edi
 await page.waitForSelector('.price-bcx', { timeout: 20000 })
 await page.select('#market_sort', 'price');
 	await page.waitForTimeout(2000);
-await page.mouse.click(417, 372, {button: 'left'})
+					await page.waitForSelector('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
+					await page.click('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
 await page.waitForTimeout(2000);
-await page.mouse.click(1145, 265, {button: 'left'})
+await page.click('#btn_buy');
 await page.waitForTimeout(2000);
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
+await page.$eval('input[type=number]', el => el.value = '1');
 page.on('dialog', async dialog => {
 await dialog.accept();
 });
@@ -299,16 +281,12 @@ await page.goto('https://splinterlands.com/?p=card_details&id=232&gold=false&edi
 await page.waitForSelector('.price-bcx', { timeout: 20000 })
 await page.select('#market_sort', 'price');
 	await page.waitForTimeout(2000);
-await page.mouse.click(417, 372, {button: 'left'})
+					await page.waitForSelector('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
+					await page.click('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
 await page.waitForTimeout(2000);
-await page.mouse.click(1145, 265, {button: 'left'})
+await page.click('#btn_buy');
 await page.waitForTimeout(2000);
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
+await page.$eval('input[type=number]', el => el.value = '1');
 page.on('dialog', async dialog => {
 await dialog.accept();
 });
@@ -339,16 +317,12 @@ await page.goto('https://splinterlands.com/?p=card_details&id=93&gold=false&edit
 await page.waitForSelector('.price-bcx', { timeout: 20000 })
 await page.select('#market_sort', 'price');
 	await page.waitForTimeout(2000);
-await page.mouse.click(417, 372, {button: 'left'})
+					await page.waitForSelector('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
+					await page.click('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
 await page.waitForTimeout(2000);
-await page.mouse.click(1145, 265, {button: 'left'})
+await page.click('#btn_buy');
 await page.waitForTimeout(2000);
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
+await page.$eval('input[type=number]', el => el.value = '1');
 page.on('dialog', async dialog => {
 await dialog.accept();
 });
@@ -379,16 +353,12 @@ await page.goto('https://splinterlands.com/?p=card_details&id=134&gold=false&edi
 await page.waitForSelector('.price-bcx', { timeout: 20000 })
 await page.select('#market_sort', 'price');
 	await page.waitForTimeout(2000);
-await page.mouse.click(417, 372, {button: 'left'})
+					await page.waitForSelector('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
+					await page.click('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
 await page.waitForTimeout(2000);
-await page.mouse.click(1145, 265, {button: 'left'})
+await page.click('#btn_buy');
 await page.waitForTimeout(2000);
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
+await page.$eval('input[type=number]', el => el.value = '1');
 page.on('dialog', async dialog => {
 await dialog.accept();
 });
@@ -419,16 +389,12 @@ await page.goto('https://splinterlands.com/?p=card_details&id=178&gold=true&edit
 await page.waitForSelector('.price-bcx', { timeout: 20000 })
 await page.select('#market_sort', 'price');
 	await page.waitForTimeout(2000);
-await page.mouse.click(417, 372, {button: 'left'})
+					await page.waitForSelector('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
+					await page.click('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
 await page.waitForTimeout(2000);
-await page.mouse.click(1145, 265, {button: 'left'})
+await page.click('#btn_buy');
 await page.waitForTimeout(2000);
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
+await page.$eval('input[type=number]', el => el.value = '1');
 page.on('dialog', async dialog => {
 await dialog.accept();
 });
@@ -459,16 +425,12 @@ await page.goto('https://splinterlands.com/?p=card_details&id=13&gold=false&edit
 await page.waitForSelector('.price-bcx', { timeout: 20000 })
 await page.select('#market_sort', 'price');
 	await page.waitForTimeout(2000);
-await page.mouse.click(417, 372, {button: 'left'})
+					await page.waitForSelector('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
+					await page.click('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
 await page.waitForTimeout(2000);
-await page.mouse.click(1145, 265, {button: 'left'})
+await page.click('#btn_buy');
 await page.waitForTimeout(2000);
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
+await page.$eval('input[type=number]', el => el.value = '1');
 page.on('dialog', async dialog => {
 await dialog.accept();
 });
@@ -499,16 +461,12 @@ await page.goto('https://splinterlands.com/?p=card_details&id=338&gold=false&edi
 await page.waitForSelector('.price-bcx', { timeout: 20000 })
 await page.select('#market_sort', 'price');
 	await page.waitForTimeout(2000);
-await page.mouse.click(417, 372, {button: 'left'})
+					await page.waitForSelector('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
+					await page.click('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
 await page.waitForTimeout(2000);
-await page.mouse.click(1145, 265, {button: 'left'})
+await page.click('#btn_buy');
 await page.waitForTimeout(2000);
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
+await page.$eval('input[type=number]', el => el.value = '1');
 page.on('dialog', async dialog => {
 await dialog.accept();
 });
@@ -539,16 +497,12 @@ await page.goto('https://splinterlands.com/?p=card_details&id=254&gold=false&edi
 await page.waitForSelector('.price-bcx', { timeout: 20000 })
 await page.select('#market_sort', 'price');
 	await page.waitForTimeout(2000);
-await page.mouse.click(417, 372, {button: 'left'})
+					await page.waitForSelector('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
+					await page.click('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
 await page.waitForTimeout(2000);
-await page.mouse.click(1145, 265, {button: 'left'})
+await page.click('#btn_buy');
 await page.waitForTimeout(2000);
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
+await page.$eval('input[type=number]', el => el.value = '1');
 page.on('dialog', async dialog => {
 await dialog.accept();
 });
@@ -579,16 +533,12 @@ await page.goto('https://splinterlands.com/?p=card_details&id=259&gold=false&edi
 await page.waitForSelector('.price-bcx', { timeout: 20000 })
 await page.select('#market_sort', 'price');
 	await page.waitForTimeout(2000);
-await page.mouse.click(417, 372, {button: 'left'})
+					await page.waitForSelector('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
+					await page.click('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
 await page.waitForTimeout(2000);
-await page.mouse.click(1145, 265, {button: 'left'})
+await page.click('#btn_buy');
 await page.waitForTimeout(2000);
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
+await page.$eval('input[type=number]', el => el.value = '1');
 page.on('dialog', async dialog => {
 await dialog.accept();
 });
@@ -619,16 +569,12 @@ await page.goto('https://splinterlands.com/?p=card_details&id=90&gold=false&edit
 await page.waitForSelector('.price-bcx', { timeout: 20000 })
 await page.select('#market_sort', 'price');
 	await page.waitForTimeout(2000);
-await page.mouse.click(417, 372, {button: 'left'})
+					await page.waitForSelector('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
+					await page.click('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
 await page.waitForTimeout(2000);
-await page.mouse.click(1145, 265, {button: 'left'})
+await page.click('#btn_buy');
 await page.waitForTimeout(2000);
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
+await page.$eval('input[type=number]', el => el.value = '1');
 page.on('dialog', async dialog => {
 await dialog.accept();
 });
@@ -659,16 +605,12 @@ await page.goto('https://splinterlands.com/?p=card_details&id=279&gold=false&edi
 await page.waitForSelector('.price-bcx', { timeout: 20000 })
 await page.select('#market_sort', 'price');
 	await page.waitForTimeout(2000);
-await page.mouse.click(417, 372, {button: 'left'})
+					await page.waitForSelector('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
+					await page.click('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
 await page.waitForTimeout(2000);
-await page.mouse.click(1145, 265, {button: 'left'})
+await page.click('#btn_buy');
 await page.waitForTimeout(2000);
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
+await page.$eval('input[type=number]', el => el.value = '1');
 page.on('dialog', async dialog => {
 await dialog.accept();
 });
@@ -699,16 +641,12 @@ await page.goto('https://splinterlands.com/?p=card_details&id=85&gold=false&edit
 await page.waitForSelector('.price-bcx', { timeout: 20000 })
 await page.select('#market_sort', 'price');
 	await page.waitForTimeout(2000);
-await page.mouse.click(417, 372, {button: 'left'})
+					await page.waitForSelector('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
+					await page.click('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
 await page.waitForTimeout(2000);
-await page.mouse.click(1145, 265, {button: 'left'})
+await page.click('#btn_buy');
 await page.waitForTimeout(2000);
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
+await page.$eval('input[type=number]', el => el.value = '1');
 page.on('dialog', async dialog => {
 await dialog.accept();
 });
@@ -739,16 +677,12 @@ await page.goto('https://splinterlands.com/?p=card_details&id=95&gold=false&edit
 await page.waitForSelector('.price-bcx', { timeout: 20000 })
 await page.select('#market_sort', 'price');
 	await page.waitForTimeout(2000);
-await page.mouse.click(417, 372, {button: 'left'})
+					await page.waitForSelector('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
+					await page.click('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
 await page.waitForTimeout(2000);
-await page.mouse.click(1145, 265, {button: 'left'})
+await page.click('#btn_buy');
 await page.waitForTimeout(2000);
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
+await page.$eval('input[type=number]', el => el.value = '1');
 page.on('dialog', async dialog => {
 await dialog.accept();
 });
@@ -779,16 +713,12 @@ await page.goto('https://splinterlands.com/?p=card_details&id=221&gold=false&edi
 await page.waitForSelector('.price-bcx', { timeout: 20000 })
 await page.select('#market_sort', 'price');
 	await page.waitForTimeout(2000);
-await page.mouse.click(417, 372, {button: 'left'})
+					await page.waitForSelector('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
+					await page.click('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
 await page.waitForTimeout(2000);
-await page.mouse.click(1145, 265, {button: 'left'})
+await page.click('#btn_buy');
 await page.waitForTimeout(2000);
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
+await page.$eval('input[type=number]', el => el.value = '1');
 page.on('dialog', async dialog => {
 await dialog.accept();
 });
@@ -819,16 +749,12 @@ await page.goto('https://splinterlands.com/?p=card_details&id=31&gold=false&edit
 await page.waitForSelector('.price-bcx', { timeout: 20000 })
 await page.select('#market_sort', 'price');
 	await page.waitForTimeout(2000);
-await page.mouse.click(417, 372, {button: 'left'})
+					await page.waitForSelector('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
+					await page.click('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
 await page.waitForTimeout(2000);
-await page.mouse.click(1145, 265, {button: 'left'})
+await page.click('#btn_buy');
 await page.waitForTimeout(2000);
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
+await page.$eval('input[type=number]', el => el.value = '1');
 page.on('dialog', async dialog => {
 await dialog.accept();
 });
@@ -859,16 +785,12 @@ await page.goto('https://splinterlands.com/?p=card_details&id=258&gold=false&edi
 await page.waitForSelector('.price-bcx', { timeout: 20000 })
 await page.select('#market_sort', 'price');
 	await page.waitForTimeout(2000);
-await page.mouse.click(417, 372, {button: 'left'})
+					await page.waitForSelector('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
+					await page.click('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
 await page.waitForTimeout(2000);
-await page.mouse.click(1145, 265, {button: 'left'})
+await page.click('#btn_buy');
 await page.waitForTimeout(2000);
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
+await page.$eval('input[type=number]', el => el.value = '1');
 page.on('dialog', async dialog => {
 await dialog.accept();
 });
@@ -899,16 +821,12 @@ await page.goto('https://splinterlands.com/?p=card_details&id=91&gold=false&edit
 await page.waitForSelector('.price-bcx', { timeout: 20000 })
 await page.select('#market_sort', 'price');
 	await page.waitForTimeout(2000);
-await page.mouse.click(417, 372, {button: 'left'})
+					await page.waitForSelector('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
+					await page.click('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
 await page.waitForTimeout(2000);
-await page.mouse.click(1145, 265, {button: 'left'})
+await page.click('#btn_buy');
 await page.waitForTimeout(2000);
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
+await page.$eval('input[type=number]', el => el.value = '1');
 page.on('dialog', async dialog => {
 await dialog.accept();
 });
@@ -939,16 +857,12 @@ await page.goto('https://splinterlands.com/?p=card_details&id=131&gold=false&edi
 await page.waitForSelector('.price-bcx', { timeout: 20000 })
 await page.select('#market_sort', 'price');
 	await page.waitForTimeout(2000);
-await page.mouse.click(417, 372, {button: 'left'})
+					await page.waitForSelector('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
+					await page.click('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
 await page.waitForTimeout(2000);
-await page.mouse.click(1145, 265, {button: 'left'})
+await page.click('#btn_buy');
 await page.waitForTimeout(2000);
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
+await page.$eval('input[type=number]', el => el.value = '1');
 page.on('dialog', async dialog => {
 await dialog.accept();
 });
@@ -979,16 +893,12 @@ await page.goto('https://splinterlands.com/?p=card_details&id=242&gold=false&edi
 await page.waitForSelector('.price-bcx', { timeout: 20000 })
 await page.select('#market_sort', 'price');
 	await page.waitForTimeout(2000);
-await page.mouse.click(417, 372, {button: 'left'})
+					await page.waitForSelector('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
+					await page.click('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
 await page.waitForTimeout(2000);
-await page.mouse.click(1145, 265, {button: 'left'})
+await page.click('#btn_buy');
 await page.waitForTimeout(2000);
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
+await page.$eval('input[type=number]', el => el.value = '1');
 page.on('dialog', async dialog => {
 await dialog.accept();
 });
@@ -1019,16 +929,12 @@ await page.goto('https://splinterlands.com/?p=card_details&id=82&gold=false&edit
 await page.waitForSelector('.price-bcx', { timeout: 20000 })
 await page.select('#market_sort', 'price');
 	await page.waitForTimeout(2000);
-await page.mouse.click(417, 372, {button: 'left'})
+					await page.waitForSelector('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
+					await page.click('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
 await page.waitForTimeout(2000);
-await page.mouse.click(1145, 265, {button: 'left'})
+await page.click('#btn_buy');
 await page.waitForTimeout(2000);
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
+await page.$eval('input[type=number]', el => el.value = '1');
 page.on('dialog', async dialog => {
 await dialog.accept();
 });
@@ -1059,16 +965,12 @@ await page.goto('https://splinterlands.com/?p=card_details&id=237&gold=false&edi
 await page.waitForSelector('.price-bcx', { timeout: 20000 })
 await page.select('#market_sort', 'price');
 	await page.waitForTimeout(2000);
-await page.mouse.click(417, 372, {button: 'left'})
+					await page.waitForSelector('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
+					await page.click('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
 await page.waitForTimeout(2000);
-await page.mouse.click(1145, 265, {button: 'left'})
+await page.click('#btn_buy');
 await page.waitForTimeout(2000);
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
+await page.$eval('input[type=number]', el => el.value = '1');
 page.on('dialog', async dialog => {
 await dialog.accept();
 });
@@ -1099,16 +1001,12 @@ await page.goto('https://splinterlands.com/?p=card_details&id=276&gold=false&edi
 await page.waitForSelector('.price-bcx', { timeout: 20000 })
 await page.select('#market_sort', 'price');
 	await page.waitForTimeout(2000);
-await page.mouse.click(417, 372, {button: 'left'})
+					await page.waitForSelector('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
+					await page.click('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
 await page.waitForTimeout(2000);
-await page.mouse.click(1145, 265, {button: 'left'})
+await page.click('#btn_buy');
 await page.waitForTimeout(2000);
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
+await page.$eval('input[type=number]', el => el.value = '1');
 page.on('dialog', async dialog => {
 await dialog.accept();
 });
@@ -1139,16 +1037,12 @@ await page.goto('https://splinterlands.com/?p=card_details&id=262&gold=false&edi
 await page.waitForSelector('.price-bcx', { timeout: 20000 })
 await page.select('#market_sort', 'price');
 	await page.waitForTimeout(2000);
-await page.mouse.click(417, 372, {button: 'left'})
+					await page.waitForSelector('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
+					await page.click('table > tbody > tr:nth-child(1) > .check > .card-checkbox');
 await page.waitForTimeout(2000);
-await page.mouse.click(1145, 265, {button: 'left'})
+await page.click('#btn_buy');
 await page.waitForTimeout(2000);
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
-await page.mouse.click(713, 310, {button: 'left'})
+await page.$eval('input[type=number]', el => el.value = '1');
 page.on('dialog', async dialog => {
 await dialog.accept();
 });
